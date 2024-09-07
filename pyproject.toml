@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "llmagents-codegemma"
+version = "0.1.0"
+description = ""
+authors = ["IbrahimOued <brahim.oued@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+llama-index-core = "^0.11.3"
+llama-index-utils-workflow = "^0.2.0"
+llama-index = "^0.11.3"
+llama-index-llms-huggingface = "^0.3.1"
+llama-index-llms-huggingface-api = "^0.2.0"
+llama-index-embeddings-huggingface = "^0.3.1"
+tree-sitter = "^0.23.0"
+tree-sitter-languages = "^1.10.2"
+llama-index-packs-agents-llm-compiler = "^0.2.0"
+tree-sitter-python = "^0.23.0"
+llama-index-embeddings-huggingface-api = "^0.2.0"
+llama-index-llms-ollama = "^0.3.0"
+colorama = "^0.4.6"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -78,19 +78,13 @@ def stock_lookup_agent_factory(state: dict) -> ReActAgent:
         If the user asks to do anything other than look up a stock symbol or price, call the tool "done" to signal some other agent should help.
     """)
 
-    # return OpenAIAgent.from_tools(
-    #     tools,
-    #     llm=OpenAI(model="gpt-4o"),
-    #     system_prompt=system_prompt,
-    # )
-
-    llm = LLMSingleton().get_llm_model()
+    llm = LLMSingleton()
 
     return ReActAgent.from_tools(
         tools,
         llm=llm,
         system_prompt=system_prompt,
-        max_iteration=30,
+        max_iterations=200,
     )
 
 # Auth Agent
@@ -139,12 +133,12 @@ def auth_agent_factory(state: dict) -> ReActAgent:
     """)
 
 
-    llm = LLMSingleton().get_llm_model()
+    llm = LLMSingleton()
     return ReActAgent.from_tools(
         tools,
         llm=llm,
         system_prompt=system_prompt,
-        max_iteration=30,
+        max_iterations=200,
     )
 
 # Account balance agent
@@ -196,13 +190,13 @@ def account_balance_agent_factory(state: dict) -> ReActAgent:
     """)
 
 
-    llm = LLMSingleton().get_llm_model()
+    llm = LLMSingleton()
     type(llm)
     return ReActAgent.from_tools(
         tools,
         llm=llm,
         system_prompt=system_prompt,
-        max_iteration=30,
+        max_iterations=200,
     )
 
 def transfer_money_agent_factory(state: dict) -> ReActAgent:
@@ -257,12 +251,12 @@ def transfer_money_agent_factory(state: dict) -> ReActAgent:
         If the user asks to do anything other than transfer money, call the tool "done" to signal some other agent should help.
     """)
 
-    llm = LLMSingleton().get_llm_model()
+    llm = LLMSingleton()
     return ReActAgent.from_tools(
         tools,
         llm=llm,
         system_prompt=system_prompt,
-        max_iteration=30,
+        max_iterations=200,
     )
 
 # Concierge agent
@@ -290,12 +284,12 @@ def concierge_agent_factory(state: dict) -> ReActAgent:
     """)
 
 
-    llm = LLMSingleton().get_llm_model()
+    llm = LLMSingleton()
     return ReActAgent.from_tools(
         tools,
         llm=llm,
         system_prompt=system_prompt,
-        max_iteration=30,
+        max_iterations=200,
     )
 
 # Continuation agent
@@ -314,12 +308,12 @@ def continuation_agent_factory(state: dict) -> ReActAgent:
         {pprint.pformat(state, indent=4)}
     """)
 
-    llm = LLMSingleton().get_llm_model()
+    llm = LLMSingleton()
     return ReActAgent.from_tools(
         tools,
         llm=llm,
         system_prompt=system_prompt,
-        max_iteration=30,
+        max_iterations=200,
     )
 
 # Orchestration agent
@@ -365,12 +359,12 @@ def orchestration_agent_factory(state: dict) -> ReActAgent:
     """)
 
 
-    llm = LLMSingleton().get_llm_model()
+    llm = LLMSingleton()
     return ReActAgent.from_tools(
         tools,
         llm=llm,
         system_prompt=system_prompt,
-        max_iteration=30,
+        max_iterations=200,
     )
 
 def get_initial_state() -> dict:
